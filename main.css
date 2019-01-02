@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+}
+main {
+    width:80%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0,0,0,.3);
+    padding: 4%;
+}
+.progress-bar .progress {
+    position: relative;
+    width: 1px;
+    height: 100%;
+    background-color: red;
+    background-image: -webkit-linear-gradient(left, red, blue,green);
+    animation: width 6s ease-in-out infinite;
+}
+.progress-bar {
+    position: relative; 
+    height: 25px;
+    width: 100%;
+    margin-top: 10%;
+    box-shadow: 0 0 2px inset black;
+    background-color: transparent;
+   
+}
+.progress::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -5px;
+    width:10px;
+    height: 10px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transform: rotate(45deg);
+    background-color: black;
+}
+.progress::after {
+    content: attr(data-label);
+    position: absolute;
+    top: -37px;
+    right: -9px;
+    width:50px;
+    height: 25px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    color: #fefefe;
+    background-color: black;
+}
+
+@keyframes width {
+    5%,10% {
+        width: 10%;
+    }
+    11%,25% {
+        width: 45%;
+    }
+    30%, 75% {
+        width: 80%;
+    }
+    80%,95% {
+        width: 91%;
+    }
+    99%, 100% {
+        width: 100%;
+    }
+}
